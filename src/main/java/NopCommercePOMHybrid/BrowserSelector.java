@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class BrowserSelector extends Utils {
     //LoadProp class to read data from TestDataConfig file
     LoadProp loadProp = new LoadProp();
+
     //browser setup method
     public void setUpBrowser() {
 
@@ -35,8 +36,8 @@ public class BrowserSelector extends Utils {
             System.setProperty("webdriver.chrome.driver", "src/test/Resources/BrowserDrivers/chromedriver.exe");
             ChromeOptions options = new ChromeOptions();
             options.addArguments("disable-infobars");
-            options.addArguments("--diable-extensions");
-            options.addArguments("--disbale-setUpBrowser-side-navigation");
+            options.addArguments("--disable-extensions");
+            options.addArguments("--disable-setUpBrowser-side-navigation");
             options.addArguments("--incognito");
             options.addArguments("--disable-blink-features=BlockCredentialedSubresources");
             driver = new ChromeDriver(options);

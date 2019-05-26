@@ -46,9 +46,14 @@ public class Utils extends BasePage{
         }
     }
 
-    //1 Clicking element
+    //1 Clicking element by locator
     public static void clickElement(By by) {
         driver.findElement(by).click();
+    }
+
+    //1A Clicking element by linkText
+    public static void clickElementByLinkText(String link){
+        driver.findElement(By.linkText(link)).click();
     }
 
     //2 Clearing text from a box
@@ -269,6 +274,11 @@ public class Utils extends BasePage{
             date = dateFormat.parse(dayMonthYear);
         } catch (Exception e) {
         }
+    }
+
+    //Assert method for assert current url
+    public static void assertCurrentURL (String url){
+        Assert.assertTrue(driver.getCurrentUrl().equals(url));
     }
 
     //28 Take screenshot when test fails
